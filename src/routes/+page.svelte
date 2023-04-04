@@ -49,7 +49,9 @@
         <tbody>
             {#each tasks as task}
             <tr>
-                <td class:checked={task.status} >{task.name}</td>
+                <td>
+                    <input class:checked={task.status} class="taskName" type="text" bind:value={task.name} placeholder="Enter task name...">
+                </td>
                 <td>
                     <input type="checkbox" bind:checked={task.status}>
                 </td>
@@ -72,6 +74,10 @@ table{
 }
 tr, td{
     padding: 20px
+}
+.taskName{
+    border: none;
+    border-bottom: 1px solid black;
 }
 	.checked {
         text-decoration: line-through;
